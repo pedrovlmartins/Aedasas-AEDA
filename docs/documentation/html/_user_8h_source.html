@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>AgenciadeViagens-AEDA: Código-Fonte de User.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">AgenciadeViagens-AEDA
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Gerado por Doxygen 1.7.5.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;ficheiros</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">User.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef USER_H_</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define USER_H_</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;Trip.h&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;boost/serialization/base_object.hpp&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;boost/serialization/string.hpp&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;boost/serialization/vector.hpp&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;boost/serialization/assume_abstract.hpp&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="keyword">using namespace </span>std;
+<a name="l00013"></a>00013 
+<a name="l00020"></a><a class="code" href="class_user.html">00020</a> <span class="keyword">class </span><a class="code" href="class_user.html">User</a> {
+<a name="l00021"></a>00021 <span class="keyword">protected</span>:
+<a name="l00022"></a>00022         <span class="keyword">static</span> <span class="keywordtype">int</span> numOfUsers;
+<a name="l00023"></a>00023         <span class="keywordtype">int</span> regiNumber;
+<a name="l00024"></a>00024         <span class="keywordtype">string</span> login;
+<a name="l00025"></a>00025         <span class="keywordtype">string</span> password;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00030"></a>00030         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00031"></a>00031                 file &amp; numOfUsers &amp; regiNumber &amp; login &amp; password;
+<a name="l00032"></a>00032         }
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         BOOST_SERIALIZATION_ASSUME_ABSTRACT(<a class="code" href="class_user.html">User</a>)
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">public</span>:
+<a name="l00040"></a><a class="code" href="class_user.html#a4a0137053e591fbb79d9057dd7d2283d">00040</a>                 <a class="code" href="class_user.html#a4a0137053e591fbb79d9057dd7d2283d">User</a>() {
+<a name="l00041"></a>00041                 }
+<a name="l00042"></a>00042                 ;
+<a name="l00043"></a>00043                 <a class="code" href="class_user.html">User</a>(<span class="keywordtype">string</span>, <span class="keywordtype">string</span>);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045                 <span class="comment">//Metodos Get</span>
+<a name="l00046"></a>00046 
+<a name="l00050"></a>00050                 <span class="keyword">static</span> <span class="keywordtype">int</span> getNumOfUsers();
+<a name="l00054"></a>00054                 <span class="keywordtype">int</span> getNumber() <span class="keyword">const</span>;
+<a name="l00058"></a>00058                 <span class="keywordtype">string</span> getLogin() <span class="keyword">const</span>;
+<a name="l00062"></a>00062                 <span class="keywordtype">string</span> getPassword() <span class="keyword">const</span>;
+<a name="l00063"></a>00063 
+<a name="l00067"></a>00067                 <span class="keywordtype">void</span> changeLogin(<span class="keywordtype">string</span>, <span class="keywordtype">string</span>);
+<a name="l00068"></a>00068 
+<a name="l00072"></a>00072                 <span class="keyword">virtual</span> <span class="keywordtype">string</span> getTypeOfUser() <span class="keyword">const</span> = 0;
+<a name="l00073"></a>00073 };
+<a name="l00074"></a>00074 
+<a name="l00081"></a><a class="code" href="class_costumer.html">00081</a> <span class="keyword">class </span><a class="code" href="class_costumer.html">Costumer</a>: <span class="keyword">public</span> <a class="code" href="class_user.html">User</a> {
+<a name="l00082"></a>00082 <span class="keyword">protected</span>:
+<a name="l00083"></a>00083         <span class="keywordtype">string</span> name;
+<a name="l00084"></a>00084         <span class="keywordtype">string</span> email;
+<a name="l00085"></a>00085         <span class="keywordtype">string</span> phoneNumber;
+<a name="l00086"></a>00086         <span class="keywordtype">string</span> address;
+<a name="l00087"></a>00087         <span class="keywordtype">string</span> zipCode;
+<a name="l00088"></a>00088         <span class="keywordtype">string</span> country;
+<a name="l00089"></a>00089         vector&lt;Trip&gt; history;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00094"></a>00094         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00095"></a>00095                 file &amp; boost::serialization::base_object&lt;User&gt;(*this);
+<a name="l00096"></a>00096                 file &amp; name &amp; email &amp; phoneNumber &amp; address &amp; zipCode &amp; country &amp; history;
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         BOOST_SERIALIZATION_ASSUME_ABSTRACT(<a class="code" href="class_costumer.html">Costumer</a>)
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="keyword">public</span>:
+<a name="l00102"></a>00102         <a class="code" href="class_costumer.html">Costumer</a>() {
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104         ;
+<a name="l00108"></a>00108         <a class="code" href="class_costumer.html">Costumer</a>(<span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110         <span class="comment">// Metodos Get</span>
+<a name="l00111"></a>00111 
+<a name="l00115"></a>00115         <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;
+<a name="l00119"></a>00119         <span class="keywordtype">string</span> getEmail() <span class="keyword">const</span>;
+<a name="l00123"></a>00123         <span class="keywordtype">string</span> getAddress() <span class="keyword">const</span>;
+<a name="l00127"></a>00127         <span class="keywordtype">string</span> getZipCode() <span class="keyword">const</span>;
+<a name="l00131"></a>00131         <span class="keywordtype">string</span> getPhoneNumber() <span class="keyword">const</span>;
+<a name="l00135"></a>00135         <span class="keywordtype">string</span> getCountry() <span class="keyword">const</span>;
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137         <span class="comment">// Metodos Set</span>
+<a name="l00138"></a>00138 
+<a name="l00142"></a>00142         <span class="keywordtype">void</span> setAddress(<span class="keywordtype">string</span>);
+<a name="l00143"></a>00143 
+<a name="l00147"></a>00147         <span class="keywordtype">void</span> setEmail(<span class="keywordtype">string</span>);
+<a name="l00151"></a>00151         <span class="keywordtype">void</span> setName(<span class="keywordtype">string</span>);
+<a name="l00155"></a>00155         <span class="keywordtype">void</span> setZipCode(<span class="keywordtype">string</span>);
+<a name="l00159"></a>00159         <span class="keywordtype">void</span> setCountry(<span class="keywordtype">string</span>);
+<a name="l00163"></a>00163         <span class="keywordtype">void</span> setPhoneNumber(<span class="keywordtype">string</span>);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 
+<a name="l00170"></a>00170         <span class="keywordtype">void</span> addTrip(<span class="keyword">const</span> <a class="code" href="class_trip.html">Trip</a> &amp;);
+<a name="l00171"></a>00171 
+<a name="l00176"></a>00176         <a class="code" href="class_trip.html">Trip</a> getTrip(<span class="keywordtype">string</span>) <span class="keyword">const</span>;
+<a name="l00177"></a>00177 
+<a name="l00182"></a>00182         <span class="keywordtype">int</span> hasGoneTo(<span class="keywordtype">string</span>) <span class="keyword">const</span>;
+<a name="l00183"></a>00183 
+<a name="l00187"></a>00187         vector&lt;Trip&gt; getHistory() <span class="keyword">const</span>;
+<a name="l00191"></a><a class="code" href="class_costumer.html#a6212d5a415e64decf255a10a922587ea">00191</a>         <span class="keywordtype">string</span> <a class="code" href="class_costumer.html#a6212d5a415e64decf255a10a922587ea">getTypeOfUser</a>(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;Costumer&quot;</span>;}
+<a name="l00192"></a>00192 };
+<a name="l00193"></a>00193 
+<a name="l00200"></a><a class="code" href="class_particular.html">00200</a> <span class="keyword">class </span><a class="code" href="class_particular.html">Particular</a>: <span class="keyword">public</span> <a class="code" href="class_costumer.html">Costumer</a> {
+<a name="l00201"></a>00201 <span class="keyword">protected</span>:
+<a name="l00202"></a>00202         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> age;
+<a name="l00203"></a>00203         <a class="code" href="class_date.html">Date</a> birthDate;
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00208"></a>00208         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00209"></a>00209                 file &amp; boost::serialization::base_object&lt;Costumer&gt;(*this);
+<a name="l00210"></a>00210                 file &amp; age &amp; birthDate;
+<a name="l00211"></a>00211         }
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213 <span class="keyword">public</span>:
+<a name="l00217"></a><a class="code" href="class_particular.html#ac348d7cd078bbc184cf12f7ac8c7e589">00217</a>                 <a class="code" href="class_particular.html#ac348d7cd078bbc184cf12f7ac8c7e589">Particular</a>() {
+<a name="l00218"></a>00218                 }
+<a name="l00219"></a>00219                 ;
+<a name="l00220"></a>00220                 <a class="code" href="class_particular.html">Particular</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> &amp;, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>,
+<a name="l00221"></a>00221                                 <span class="keywordtype">string</span>, <span class="keywordtype">string</span>);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223                 <span class="comment">// Metodos Get</span>
+<a name="l00224"></a>00224 
+<a name="l00228"></a>00228                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getAge() <span class="keyword">const</span>;
+<a name="l00232"></a>00232                 <a class="code" href="class_date.html">Date</a> getBirthDate() <span class="keyword">const</span>;
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235                 <span class="comment">// Metodos Set</span>
+<a name="l00236"></a>00236 
+<a name="l00240"></a>00240                 <span class="keywordtype">void</span> setDate(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> &amp;);
+<a name="l00244"></a>00244                 <span class="keywordtype">void</span> setAge(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00245"></a>00245 
+<a name="l00249"></a>00249                 <span class="keywordtype">string</span> getTypeOfUser() <span class="keyword">const</span>;
+<a name="l00250"></a>00250 
+<a name="l00254"></a>00254                 <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_particular.html">Particular</a>&amp;);
+<a name="l00255"></a>00255 };
+<a name="l00256"></a>00256 
+<a name="l00263"></a><a class="code" href="class_commercial.html">00263</a> <span class="keyword">class </span><a class="code" href="class_commercial.html">Commercial</a>: <span class="keyword">public</span> <a class="code" href="class_costumer.html">Costumer</a> {
+<a name="l00264"></a>00264 <span class="keyword">protected</span>:
+<a name="l00265"></a>00265         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numPeople;
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00268"></a>00268 
+<a name="l00269"></a>00269         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00270"></a>00270         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00271"></a>00271                 file &amp; boost::serialization::base_object&lt;Costumer&gt;(*this);
+<a name="l00272"></a>00272                 file &amp; numPeople;
+<a name="l00273"></a>00273         }
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275 <span class="keyword">public</span>:
+<a name="l00276"></a>00276         <a class="code" href="class_commercial.html">Commercial</a>() {
+<a name="l00277"></a>00277                 }
+<a name="l00278"></a>00278                 ;
+<a name="l00282"></a>00282                 <a class="code" href="class_commercial.html">Commercial</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>, <span class="keywordtype">string</span>,
+<a name="l00283"></a>00283                                 <span class="keywordtype">string</span>, <span class="keywordtype">string</span>);
+<a name="l00284"></a>00284 
+<a name="l00288"></a>00288                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getNumPeople() <span class="keyword">const</span>;
+<a name="l00292"></a>00292                 <span class="keywordtype">void</span> setNumPeople(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00293"></a>00293 
+<a name="l00297"></a>00297                 <span class="keywordtype">string</span> getTypeOfUser() <span class="keyword">const</span>;
+<a name="l00298"></a>00298 
+<a name="l00302"></a>00302                 <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_commercial.html">Commercial</a>&amp;);
+<a name="l00303"></a>00303 };
+<a name="l00304"></a>00304 
+<a name="l00311"></a><a class="code" href="class_admin.html">00311</a> <span class="keyword">class </span><a class="code" href="class_admin.html">Admin</a>: <span class="keyword">public</span> <a class="code" href="class_user.html">User</a> {
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00316"></a>00316         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00317"></a>00317                 file &amp; boost::serialization::base_object&lt;User&gt;(*this);
+<a name="l00318"></a>00318         }
+<a name="l00319"></a>00319 
+<a name="l00320"></a>00320 <span class="keyword">public</span>:
+<a name="l00321"></a>00321 
+<a name="l00325"></a>00325                 <a class="code" href="class_admin.html">Admin</a>(<span class="keywordtype">string</span> usr = <span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">string</span> pw = <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00326"></a>00326 
+<a name="l00330"></a>00330                 <span class="keywordtype">string</span> getTypeOfUser() <span class="keyword">const</span>;
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332 };
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Amigos</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Gerado em Segunda, 7 de Novembro de 2011 02:37:34 para AgenciadeViagens-AEDA por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

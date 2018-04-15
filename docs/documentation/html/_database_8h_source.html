@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>AgenciadeViagens-AEDA: Código-Fonte de Database.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">AgenciadeViagens-AEDA
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Gerado por Doxygen 1.7.5.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;ficheiros</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Database.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef DATABASE_H_</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define DATABASE_H_</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include&lt;fstream&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include&lt;vector&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include&quot;User.h&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include&quot;Trip.h&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include&quot;User.h&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include&lt;string&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include&lt;map&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include&lt;algorithm&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;utility&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include&lt;boost/archive/text_oarchive.hpp&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include&lt;boost/archive/text_iarchive.hpp&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include&lt;boost/serialization/vector.hpp&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include&lt;boost/serialization/map.hpp&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include&lt;boost/serialization/string.hpp&gt;</span>
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="keyword">using namespace </span>std;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00025"></a>00025         <span class="keywordtype">bool</span> ascendingNameP(<a class="code" href="class_particular.html">Particular</a> u1, <a class="code" href="class_particular.html">Particular</a> u2) ;
+<a name="l00026"></a>00026 
+<a name="l00030"></a>00030         <span class="keywordtype">bool</span> descendingNameP(<a class="code" href="class_particular.html">Particular</a> u1, <a class="code" href="class_particular.html">Particular</a> u2) ;
+<a name="l00031"></a>00031 
+<a name="l00035"></a>00035         <span class="keywordtype">bool</span> ascendingNameC(<a class="code" href="class_commercial.html">Commercial</a> u1, <a class="code" href="class_commercial.html">Commercial</a> u2) ;
+<a name="l00036"></a>00036 
+<a name="l00040"></a>00040         <span class="keywordtype">bool</span> descendingNameC(<a class="code" href="class_commercial.html">Commercial</a> u1, <a class="code" href="class_commercial.html">Commercial</a> u2) ;
+<a name="l00041"></a>00041 
+<a name="l00045"></a><a class="code" href="class_database.html">00045</a> <span class="keyword">class </span><a class="code" href="class_database.html">Database</a> {
+<a name="l00046"></a>00046         <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;
+<a name="l00047"></a>00047         vector&lt;Particular&gt; part;
+<a name="l00048"></a>00048         vector&lt;Commercial&gt; comme;
+<a name="l00049"></a>00049         vector&lt;Admin&gt; admins;
+<a name="l00050"></a>00050         vector&lt;Trip&gt; packages;
+<a name="l00051"></a>00051         vector&lt;Transportation&gt; transp;
+<a name="l00052"></a>00052         vector&lt;string&gt; destinations;
+<a name="l00053"></a>00053         map&lt;string, vector&lt;Accomodation&gt; &gt; accomodations;
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 
+<a name="l00059"></a>00059         <span class="keywordtype">void</span> save1(boost::archive::text_oarchive &amp;file) { <span class="comment">//changed here</span>
+<a name="l00060"></a>00060                 file &lt;&lt; part;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00066"></a>00066         <span class="keywordtype">void</span> save2(boost::archive::text_oarchive &amp;file) {
+<a name="l00067"></a>00067                 file &lt;&lt; comme;
+<a name="l00068"></a>00068         }
+<a name="l00069"></a>00069 
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> save3(boost::archive::text_oarchive &amp;file) {
+<a name="l00074"></a>00074                 file &lt;&lt; admins;
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076 
+<a name="l00080"></a>00080         <span class="keywordtype">void</span> save4(boost::archive::text_oarchive &amp;file) {
+<a name="l00081"></a>00081                 file &lt;&lt; packages;
+<a name="l00082"></a>00082         }
+<a name="l00083"></a>00083 
+<a name="l00087"></a>00087         <span class="keywordtype">void</span> save5(boost::archive::text_oarchive &amp;file) {
+<a name="l00088"></a>00088                 file &lt;&lt; destinations;
+<a name="l00089"></a>00089         }
+<a name="l00090"></a>00090 
+<a name="l00094"></a>00094         <span class="keywordtype">void</span> save6(boost::archive::text_oarchive &amp;file) {
+<a name="l00095"></a>00095                 file &lt;&lt; accomodations;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 
+<a name="l00101"></a>00101         <span class="keywordtype">void</span> save7(boost::archive::text_oarchive &amp;file) {
+<a name="l00102"></a>00102                 file &lt;&lt; transp;
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104 
+<a name="l00108"></a>00108         <span class="keywordtype">void</span> load1(boost::archive::text_iarchive &amp;file) {
+<a name="l00109"></a>00109                 file &gt;&gt; part;
+<a name="l00110"></a>00110         }
+<a name="l00111"></a>00111 
+<a name="l00115"></a>00115         <span class="keywordtype">void</span> load2(boost::archive::text_iarchive &amp;file) {
+<a name="l00116"></a>00116                 file &gt;&gt; comme;
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118 
+<a name="l00122"></a>00122         <span class="keywordtype">void</span> load3(boost::archive::text_iarchive &amp;file) {
+<a name="l00123"></a>00123                 file &gt;&gt; admins;
+<a name="l00124"></a>00124         }
+<a name="l00125"></a>00125 
+<a name="l00129"></a>00129         <span class="keywordtype">void</span> load4(boost::archive::text_iarchive &amp;file) {
+<a name="l00130"></a>00130                 file &gt;&gt; packages;
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132 
+<a name="l00136"></a>00136         <span class="keywordtype">void</span> load5(boost::archive::text_iarchive &amp;file) {
+<a name="l00137"></a>00137                 file &gt;&gt; destinations;
+<a name="l00138"></a>00138         }
+<a name="l00139"></a>00139 
+<a name="l00143"></a>00143         <span class="keywordtype">void</span> load6(boost::archive::text_iarchive &amp;file) {
+<a name="l00144"></a>00144                 file &gt;&gt; accomodations;
+<a name="l00145"></a>00145         }
+<a name="l00146"></a>00146 
+<a name="l00150"></a>00150         <span class="keywordtype">void</span> load7(boost::archive::text_iarchive &amp;file) {
+<a name="l00151"></a>00151                 file &gt;&gt; transp;
+<a name="l00152"></a>00152         }
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00155"></a>00155         <span class="keywordtype">void</span> serialize(Archive &amp;file, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ver) {
+<a name="l00156"></a>00156         }
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158 <span class="keyword">public</span>:
+<a name="l00162"></a>00162         <a class="code" href="class_database.html">Database</a>();
+<a name="l00163"></a>00163 
+<a name="l00167"></a>00167         <span class="keywordtype">void</span> saveData();
+<a name="l00168"></a>00168 
+<a name="l00172"></a>00172         <span class="keywordtype">void</span> loadData();
+<a name="l00173"></a>00173 
+<a name="l00177"></a>00177         <span class="keywordtype">void</span> addParticular(<a class="code" href="class_particular.html">Particular</a>);
+<a name="l00181"></a>00181         vector&lt;Particular&gt; getParticular() <span class="keyword">const</span>;
+<a name="l00182"></a>00182 
+<a name="l00186"></a>00186         <span class="keywordtype">void</span> addCommercial(<a class="code" href="class_commercial.html">Commercial</a>);
+<a name="l00190"></a>00190         vector&lt;Commercial&gt; getCommercial() <span class="keyword">const</span>;
+<a name="l00191"></a>00191 
+<a name="l00195"></a>00195         vector&lt;Admin&gt; getAdmins() <span class="keyword">const</span>;
+<a name="l00196"></a>00196 
+<a name="l00200"></a>00200         vector&lt;Trip&gt; getPackages() <span class="keyword">const</span>;
+<a name="l00201"></a>00201 
+<a name="l00205"></a>00205         vector&lt;string&gt; getDestinations() <span class="keyword">const</span>;
+<a name="l00206"></a>00206 
+<a name="l00210"></a>00210         map&lt;string, vector&lt;Accomodation&gt; &gt; getAccomodations() <span class="keyword">const</span>;
+<a name="l00211"></a>00211 
+<a name="l00215"></a>00215         vector&lt;Transportation&gt; getTransportations() <span class="keyword">const</span>;
+<a name="l00216"></a>00216 
+<a name="l00220"></a>00220         <span class="keywordtype">void</span> addTrip(<span class="keyword">const</span> <a class="code" href="class_trip.html">Trip</a>&amp;);
+<a name="l00221"></a>00221 
+<a name="l00225"></a>00225         <span class="keywordtype">void</span> addTripToUser(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keyword">const</span> <a class="code" href="class_trip.html">Trip</a>&amp;); <span class="comment">//1 - particular,2 -commercial ; position in vector</span>
+<a name="l00226"></a>00226 
+<a name="l00230"></a>00230         <span class="keywordtype">void</span> addDestination(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;);
+<a name="l00231"></a>00231 
+<a name="l00235"></a>00235         <span class="keywordtype">void</span> addAccomodation(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;, <span class="keyword">const</span> <a class="code" href="class_accomodation.html">Accomodation</a>&amp;);
+<a name="l00236"></a>00236 
+<a name="l00240"></a>00240         <span class="keywordtype">void</span> addAdmin(<span class="keyword">const</span> <a class="code" href="class_admin.html">Admin</a>&amp;);
+<a name="l00241"></a>00241 
+<a name="l00246"></a>00246         <span class="keywordtype">void</span> addPromotion(<span class="keyword">const</span> <a class="code" href="class_trip.html">Trip</a>&amp;);
+<a name="l00250"></a>00250         <span class="keywordtype">void</span> addPromotion(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>,<span class="keywordtype">double</span>);
+<a name="l00254"></a>00254         <span class="keywordtype">void</span> addTransportation(<span class="keyword">const</span> <a class="code" href="class_transportation.html">Transportation</a>&amp;);
+<a name="l00255"></a>00255 
+<a name="l00259"></a>00259         <span class="keywordtype">void</span> removeParticular(<span class="keyword">const</span> <a class="code" href="class_particular.html">Particular</a>&amp;);
+<a name="l00260"></a>00260 
+<a name="l00264"></a>00264         <span class="keywordtype">void</span> removeParticular(<span class="keywordtype">int</span>);
+<a name="l00265"></a>00265 
+<a name="l00269"></a>00269         <span class="keywordtype">void</span> removeParticular(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;);
+<a name="l00270"></a>00270 
+<a name="l00274"></a>00274         <span class="keywordtype">void</span> removeCommercial(<span class="keyword">const</span> <a class="code" href="class_commercial.html">Commercial</a>&amp;);
+<a name="l00275"></a>00275 
+<a name="l00279"></a>00279         <span class="keywordtype">void</span> removeCommercial(<span class="keywordtype">int</span>);
+<a name="l00280"></a>00280 
+<a name="l00284"></a>00284         <span class="keywordtype">void</span> removeCommercial(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;);
+<a name="l00285"></a>00285 
+<a name="l00286"></a>00286 
+<a name="l00290"></a>00290         <span class="keywordtype">void</span> sortCostumersByName(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);
+<a name="l00291"></a>00291 
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294 
+<a name="l00298"></a>00298         <span class="keywordtype">void</span> setTrip(<a class="code" href="class_trip.html">Trip</a>, <a class="code" href="class_trip.html">Trip</a>);
+<a name="l00299"></a>00299 
+<a name="l00304"></a>00304         vector&lt;Particular&gt; particularsByDestination(<span class="keywordtype">string</span>) <span class="keyword">const</span>;
+<a name="l00308"></a>00308         vector&lt;Commercial&gt; commercialsByDestination(<span class="keywordtype">string</span>) <span class="keyword">const</span>;
+<a name="l00309"></a>00309 
+<a name="l00313"></a>00313         <span class="keywordtype">void</span> clearDatabase(<span class="keywordtype">int</span>);
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316 
+<a name="l00317"></a>00317 };
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319 <span class="preprocessor">#endif </span><span class="comment">/* DATABASE_H_ */</span>
+</pre></div></div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Amigos</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Gerado em Segunda, 7 de Novembro de 2011 02:37:34 para AgenciadeViagens-AEDA por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

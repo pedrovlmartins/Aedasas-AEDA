@@ -1,0 +1,1 @@
+22 serialization::archive 9 0 0 3 0 0 0 3 EUA 0 0 2 0 0 0 80 1 5 hotel 40 1 5 motel 5 Italy 2 0 0 0 0  0 0 6 hostel 5 Spain 1 0 60 1 5 hotel

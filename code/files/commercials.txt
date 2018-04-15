@@ -1,0 +1,1 @@
+22 serialization::archive 9 0 0 2 0 0 0 0 0 0 0 6 2 4 best 5 worst 10 BEST Porto 0  9 225025671 4 FEUP 4 4432 8 Portugal 0 0 0 0 45 6 2 3 msn 7 hotmail 3 MSN 0  9 555164677 20 Somewhere in the USA 6 123321 3 USA 0 0 388

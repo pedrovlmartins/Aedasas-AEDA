@@ -1,0 +1,1 @@
+22 serialization::archive 9 0 0 3 0 0 0 620 8 Portugal 3 EUA 4 0 0 0 9 11 2011 13 11 2011 0 0 80 0 5 hotel 0 0 0 150 0 5 plane 0 2220 8 Portugal 5 Spain 7 0 15 12 2011 22 12 2011 60 4 5 hotel 300 900 4 5 plane 0 0 5 Spain 5 Italy 0 0 7 11 2011 7 11 2011 0 0 5 hotel 450 0 0 5 plane 0
